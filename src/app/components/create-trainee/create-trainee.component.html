@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Create new trainee </title>
+</head>
+<body>
+
+  <app-navbar></app-navbar>
+
+  <div id="parent" class="container">
+
+    <form (ngSubmit)="createNewTrainee()">
+
+      <div class="form-group">
+        <label for="exampleInputName"> First name </label>
+        <input [(ngModel)]="trainee.firstName" name="firstName" type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter first name" required>
+      </div>
+
+      <div class="form-group mt-4">
+        <label for="exampleInputColor"> Last name </label>
+        <input [(ngModel)]="trainee.lastName" name="lastName" type="text" class="form-control" id="exampleInputColor" aria-describedby="emailHelp" placeholder="Enter last name" required>
+      </div>
+
+      <div class="form-group mt-4">
+        <label for="exampleInputSpeed"> Age </label>
+        <input [(ngModel)]="trainee.age" name="age" type="text" class="form-control" id="exampleInputSpeed" aria-describedby="emailHelp" placeholder="Enter the age" required>
+      </div>
+
+      <div class="form-group mt-4">
+        <label for="exampleInputPower"> Phone number </label>
+        <input [(ngModel)]="trainee.phone" name="phone" type="text" class="form-control" id="exampleInputPower" aria-describedby="emailHelp" placeholder="Enter the phone number" required>
+      </div>
+
+      <div class="form-group mt-4">
+        <label for="exampleInputPower"> Address </label>
+        <input [(ngModel)]="trainee.address" name="address" class="form-control" placeholder="Enter your address" id="floatingTextarea" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-4"> Submit </button>
+
+    </form>
+  </div>
+
+</body>
+</html>

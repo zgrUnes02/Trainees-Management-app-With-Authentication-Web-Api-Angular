@@ -1,0 +1,27 @@
+#btn_td {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#btn_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 100px;
+}
+
+#btn_title a {
+    width: 200px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#pagination {
+    margin-top: 40px;
+    margin-left:100px;
+}

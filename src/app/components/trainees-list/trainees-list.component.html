@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Trainees </title>
+</head>
+
+<body>
+
+  <app-navbar></app-navbar>
+  
+  <h1 class="text-center mt-4"> Angular crud application with .Net core </h1>
+
+  <div id="btn_title" class="mt-5">
+    <h3 class="container"> Here is my table of trainees : </h3>
+    <a [routerLink]="['/trainees/create/new']" class="btn btn-success"> Create new trainee </a>
+  </div>
+
+  <table class="container table mt-4 text-center table-bordered table-hover table-responsive">
+    <thead>
+      <tr class="table-success">
+        <th width="5%" scope="col">#</th>
+        <th scope="col"> First name </th>
+        <th scope="col"> Last name </th>
+        <th scope="col"> Age </th>
+        <th scope="col"> Address </th>
+        <th scope="col"> Phone </th>
+        <th width="15%" scope="col"> Actions </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trainee of trainees | paginate: { itemsPerPage: 5, currentPage: p }">
+        <td> {{ trainees.indexOf(trainee) + 1 }} </td>
+        <td> {{ trainee.firstName }} </td>
+        <td> {{ trainee.lastName }} </td>
+        <td> {{ trainee.age }} </td>
+        <td> {{ trainee.address }} </td>
+        <td> {{ trainee.phone }} </td>
+        <td id="buttons">
+          <button title="edit" (click)="editTrainee(trainee.id)" class="btn btn-outline-primary"> Edit <i class='bx bx-edit-alt'></i> </button>
+          <button (click)="deleteTrainee(trainee.id)" title="delete" class="btn btn-outline-danger"> Delete <i class='bx bx-trash'></i> </button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <div id="pagination">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+</body>
+
+</html>
